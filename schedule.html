@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2250">
+  <meta name="description" content="A readable preview of Cross Club Pickleball League matchups and schedule.">
+  <title>Matchups preview — Cross Club Pickleball League</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="schedule.css">
+  <script src="script.js" defer></script>
+  <script src="schedule.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to matchups</a>
+  <div class="preview-bar"><span class="preview-dot"></span> Design preview · Matchups transcribed from a supplied screenshot, not a live schedule</div>
+  <header class="site-header"><div class="shell header-inner">
+    <a href="index.html" class="brand" aria-label="Cross Club Pickleball home"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-wordmark">CROSS <strong>CLUB</strong><small>PICKLEBALL LEAGUE</small></span></a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+    <nav id="primary-nav" class="nav" aria-label="Main navigation"><a href="leagues.html">Find a league</a><a href="schedule.html" aria-current="page">Schedule</a><a href="standings.html">Standings</a><a href="index.html#about">About</a><a class="nav-cta" href="index.html#get-started">Get started <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main" class="schedule-page shell">
+    <div class="schedule-head"><div><p class="kicker">FALL 2026 · NJ / PA</p><h1>Matchups,<br><em>made simple.</em></h1><p>A clearer way to see who's playing, when, and where to find the lineup.</p></div><a class="back-link" href="leagues.html">← All leagues</a></div>
+    <div class="schedule-context" aria-label="Selected league context"><span><small>League</small>Mixed</span><span><small>Region</small>NJ / PA</span><span><small>Division</small>4.0 (50+)</span><span><small>Season</small>Fall 2026</span></div>
+    <nav class="schedule-tabs" aria-label="League views"><a href="leagues.html">Overview</a><span aria-current="page">Schedule</span><a href="standings.html">Standings <small>Long Island sample ↗</small></a></nav>
+    <section class="matchup-section" aria-labelledby="matchups-title"><div class="matchup-heading"><div><p class="kicker">SAMPLE MATCHUPS</p><h2 id="matchups-title">Week 6 matchups</h2><p>Match dates and teams shown in the screenshot you shared.</p></div><label for="team-filter">Find your team <select id="team-filter"><option value="all">All teams</option></select></label></div>
+      <p class="matchup-count" role="status" aria-live="polite" id="matchup-count"></p>
+      <div id="matchup-list" class="matchup-list"></div>
+      <p class="schedule-note">Dates, teams, and times are a static preview. Verify venue and lineup information on the current league site before making plans.</p>
+    </section>
+    <section class="schedule-cta"><div><p class="kicker">NEED THE FULL LEAGUE DATA?</p><h2>Stay in the game.</h2><p>Open the current dashboard to see live lineups, results, and the full season.</p></div><a href="https://www.crossclubpickleball.com/leagues/dashboard" class="button button-lime" target="_blank" rel="noopener noreferrer">Open current dashboard ↗</a></section>
+  </main>
+  <footer class="footer"><div class="shell footer-top"><div class="brand footer-brand"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-wordmark">CROSS <strong>CLUB</strong><small>PICKLEBALL LEAGUE</small></span></div><p>Play for something bigger.</p></div><div class="shell footer-bottom"><span>Unofficial redesign preview for review</span><a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">Current live dashboard ↗</a></div></footer>
+</body>
+</html>

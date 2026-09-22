@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2250">
+  <meta name="description" content="Explore Cross Club Pickleball league formats and preview sample divisions.">
+  <title>Explore leagues — Cross Club Pickleball League</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="explore.css">
+  <script src="script.js" defer></script>
+  <script src="explore.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="preview-bar"><span class="preview-dot"></span> Redesign preview · Only divisions shown in supplied screenshots have sample data</div>
+  <header class="site-header"><div class="shell header-inner">
+    <a href="index.html" class="brand" aria-label="Cross Club Pickleball home"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-wordmark">CROSS <strong>CLUB</strong><small>PICKLEBALL LEAGUE</small></span></a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+    <nav id="primary-nav" class="nav" aria-label="Main navigation"><a href="leagues.html" aria-current="page">Find a league</a><a href="schedule.html">Schedule</a><a href="standings.html">Standings</a><a href="index.html#about">About</a><a class="nav-cta" href="index.html#get-started">Get started <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main">
+    <section class="explore-hero"><div class="shell"><p class="eyebrow">FIND YOUR PLACE IN THE LEAGUE</p><h1>Find your<br><em>game.</em></h1><p>Choose a format and region, then see the divisions we can preview so far. This demo shows the simpler path from finding a league to following its season.</p></div></section>
+    <section class="shell explorer" aria-labelledby="browse-title">
+      <div class="section-heading"><p class="kicker">LEAGUE EXPLORER</p><h2 id="browse-title">Start with what you know.</h2><p>Formats and regions come from the current site. Sample division details are limited to the screenshots provided.</p></div>
+      <div class="finder-panel">
+        <fieldset><legend>League format</legend><div class="filter-chips" id="format-options">
+          <button type="button" data-format="all" aria-pressed="true">All formats</button>
+          <button type="button" data-format="mixed" aria-pressed="false">Mixed</button>
+          <button type="button" data-format="gender" aria-pressed="false">Gender</button>
+          <button type="button" data-format="local" aria-pressed="false">Local</button>
+          <button type="button" data-format="ladder" aria-pressed="false">Ladder</button>
+        </div></fieldset>
+        <label class="region-label" for="region-filter">Region <select id="region-filter"><option value="all">All regions</option><option value="Long Island">Long Island</option><option value="NJ / PA">NJ / PA</option><option value="Baltimore">Baltimore</option><option value="CT / MA">CT / MA</option><option value="Cleveland">Cleveland</option><option value="Detroit">Detroit</option><option value="Chicago">Chicago</option><option value="Houston">Houston</option><option value="Dallas">Dallas</option><option value="Salt Lake City">Salt Lake City</option></select></label>
+      </div>
+      <p id="results-count" class="results-count" role="status" aria-live="polite"></p>
+      <div class="league-results" id="league-results"></div>
+      <div class="finder-help"><div><h3>Looking for another division?</h3><p>This preview has two example divisions. The current league website has the complete set of region, season, and division choices.</p></div><a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">Visit current league dashboard ↗</a></div>
+    </section>
+    <section class="explore-next"><div class="shell"><p class="kicker">AFTER YOU FIND A LEAGUE</p><h2>One season. One clear place to follow it.</h2><div class="next-grid"><div><span>01</span><h3>See matchups</h3><p>Dates and opponents together in a readable schedule.</p></div><div><span>02</span><h3>Check standings</h3><p>Key numbers up front, deeper stats when you need them.</p></div><div><span>03</span><h3>Get involved</h3><p>Find the right path for players or clubs.</p></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="shell footer-top"><div class="brand footer-brand"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-wordmark">CROSS <strong>CLUB</strong><small>PICKLEBALL LEAGUE</small></span></div><p>Play for something bigger.</p></div><div class="shell footer-bottom"><span>Unofficial redesign preview for review</span><a href="https://www.crossclubpickleball.com/" target="_blank" rel="noopener noreferrer">Current website ↗</a></div></footer>
+</body>
+</html>

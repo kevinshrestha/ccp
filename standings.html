@@ -1,33 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b2250">
-  <meta name="description" content="A clearer preview of Cross Club Pickleball League standings.">
-  <title>Standings Preview — Cross Club Pickleball League</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b2250'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23ffe100' stroke-width='5'/%3E%3Cpath d='M20 25h24M20 39h24' stroke='%23ffe100' stroke-width='5'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="standings.css">
-  <script src="script.js" defer></script>
-  <script src="standings.js" defer></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2250"><meta name="description" content="Explore Long Island Cross Club Pickleball standings and top players.">
+  <title>Long Island League — Cross Club Pickleball</title>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="standings.css">
+  <script src="script.js" defer></script><script src="standings.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to standings</a>
-  <div class="preview-bar"><span class="preview-dot"></span> Design preview · Results shown are a snapshot from the supplied screenshots, not live data</div>
+  <a class="skip" href="#main">Skip to league</a>
+  <div class="preview-bar"><span class="preview-dot"></span> Redesign preview · Stats captured September 22, 2026 · Not a live feed</div>
   <header class="site-header"><div class="shell header-inner">
     <a href="index.html" class="brand" aria-label="Cross Club Pickleball home"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-wordmark">CROSS <strong>CLUB</strong><small>PICKLEBALL LEAGUE</small></span></a>
     <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
-    <nav id="primary-nav" class="nav" aria-label="Main navigation"><a href="index.html#leagues">Leagues</a><a href="index.html#how-it-works">How it works</a><a href="standings.html" aria-current="page">Standings</a><a href="index.html#about">About</a><a class="nav-cta" href="index.html#get-started">Get started <span aria-hidden="true">↗</span></a></nav>
+    <nav id="primary-nav" class="nav" aria-label="Main navigation"><a href="leagues.html">Find a league</a><a href="schedule.html">Schedule</a><a href="standings.html" aria-current="page">Standings</a><a href="index.html#about">About</a><a class="nav-cta" href="index.html#get-started">Get started <span aria-hidden="true">↗</span></a></nav>
   </div></header>
-  <main id="main" class="standings-page shell">
-    <div class="standings-header"><div><p class="kicker">FALL 2026 · LONG ISLAND</p><h1>Team standings</h1><p>Long Island 3.0 Division · Mixed League</p></div><a class="back-link" href="index.html">← Back to home</a></div>
-    <div class="context-strip" aria-label="Selected league context"><span><small>Season</small>Fall 2026</span><span><small>Region</small>Long Island</span><span><small>League</small>Mixed</span><span><small>Division</small>3.0</span></div>
-    <div class="view-tabs" aria-label="League views"><a href="index.html#standings">Overview</a><a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">Schedule ↗</a><span class="active" aria-current="page">Standings</span><a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">Teams ↗</a><a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">Players ↗</a><a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">Playoffs ↗</a></div>
-    <div class="table-head"><div><h2>Division table</h2><p>Tap a team for its full breakdown.</p></div><label>Pod <select id="pod-filter"><option value="all">All pods</option><option value="East">East</option><option value="Central">Central</option><option value="West">West</option></select></label></div>
-    <div class="table-wrap"><table class="compact-table"><thead><tr><th scope="col">Rank</th><th scope="col">Team</th><th scope="col">Pod</th><th scope="col">Match record</th><th scope="col">Win rate</th><th scope="col">Games +/-</th><th scope="col"><span class="sr-only">More details</span></th></tr></thead><tbody id="standings-body"></tbody></table></div>
-    <p class="data-note">The sample records above come from the screenshots you shared. A launch version will load the selected season and division from the league’s data source.</p>
-    <section class="stat-guide" aria-labelledby="guide-title"><div><p class="kicker">QUICK GUIDE</p><h2 id="guide-title">Start with the record.</h2></div><p><strong>Match record</strong> shows wins–losses–ties. <strong>Games +/-</strong> is games won minus games lost. Open a team to see conference, home/away, clutch, and mixed/men’s/women’s records without widening the table.</p></section>
+  <main id="main">
+    <section class="league-hero"><div class="shell"><div><p class="eyebrow">FOLLOW YOUR DIVISION</p><h1>Long Island<br><em>league hub.</em></h1><p>Teams, standings, and the players behind them. Start with the essentials; open a team or player to go deeper.</p></div><div class="hero-score" aria-hidden="true"><span>LONG ISLAND</span><strong>03</strong><small>DIVISION / MIXED</small></div></div></section>
+    <div class="shell league-content">
+      <section class="context-panel" aria-labelledby="select-title"><div class="context-title"><div><p class="kicker">YOUR LEAGUE</p><h2 id="select-title">Choose your view.</h2></div><p>Selections stay together while you move between standings and players.</p></div>
+        <div class="context-filters">
+          <label for="season-filter">Season<select id="season-filter"><option>Fall 2026</option><option>Spring 2026</option><option>Fall 2025</option></select></label>
+          <label for="region-filter">Region<select id="region-filter"><option>Long Island</option><option>NJ / PA</option><option>Baltimore</option><option>CT / MA</option><option>Cleveland</option><option>Detroit</option><option>Chicago</option><option>Houston</option><option>Dallas</option><option>Salt Lake City</option></select></label>
+          <label for="type-filter">League type<select id="type-filter"><option>Mixed</option><option>Gender</option><option>Local</option></select></label>
+          <label for="division-filter">Division<select id="division-filter"><option>3.0</option><option>3.5</option><option>3.5 (50+)</option><option>4.0</option></select></label>
+        </div>
+      </section>
+      <div id="sample-content">
+        <div class="league-summary"><div><span class="summary-label">SELECTED LEAGUE</span><strong>Long Island · Mixed · 3.0</strong><span>Fall 2026 snapshot</span></div><div class="summary-metrics"><span><strong>9</strong> teams</span><span><strong>3</strong> pods</span><span><strong>20</strong> featured players</span></div></div>
+        <nav class="league-tabs" aria-label="League information"><button type="button" data-view="standings" aria-current="page">Team standings</button><button type="button" data-view="players">Top players</button></nav>
+        <section id="standings-view" aria-labelledby="standings-title">
+          <div class="view-heading"><div><p class="kicker">TEAM STANDINGS</p><h2 id="standings-title">The race at a glance.</h2><p>Rank and match record first. Open any team to see the rest of its numbers.</p></div><label for="pod-filter">Pod<select id="pod-filter"><option value="all">All pods</option><option>East</option><option>Central</option><option>West</option></select></label></div>
+          <div class="standing-labels" aria-hidden="true"><span>RANK / TEAM</span><span>MATCHES</span><span>WIN RATE</span><span>GAMES +/-</span><span></span></div>
+          <div id="standings-list" class="standings-list"></div>
+          <div class="explain-box"><strong>How to read the table</strong><p>Match record shows wins–losses–ties. Games +/- is games won minus games lost. Team rank follows the source league's order.</p></div>
+        </section>
+        <section id="players-view" aria-labelledby="players-title" hidden>
+          <div class="view-heading"><div><p class="kicker">PLAYER LEADERBOARD</p><h2 id="players-title">Players who show up.</h2><p>The top 20 in the source leaderboard, with each player's representing team verified on its team page.</p></div><label for="team-filter">Team<select id="team-filter"><option value="all">All teams</option></select></label></div>
+          <div class="player-labels" aria-hidden="true"><span>RANK / PLAYER</span><span>GAMES</span><span>RECORD</span><span>WIN RATE</span><span></span></div>
+          <div id="players-list" class="players-list"></div>
+          <div class="explain-box"><strong>What the player stats mean</strong><p>Record and win rate are based on games played, not team match results. Rankings follow the source leaderboard.</p></div>
+        </section>
+      </div>
+      <div id="unavailable-view" class="unavailable" hidden><span class="kicker">NO VERIFIED SNAPSHOT YET</span><h2>This division is next.</h2><p>We have verified data for Fall 2026 · Long Island · Mixed · 3.0 in this preview. Select those filters to see the demo, or use the current dashboard for another division.</p><a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">View current league dashboard ↗</a></div>
+      <p class="source-note">Source: <a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">Cross Club Pickleball current dashboard ↗</a>. Captured September 22, 2026. Stats may have changed since capture.</p>
+    </div>
   </main>
   <footer class="footer"><div class="shell footer-top"><div class="brand footer-brand"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-wordmark">CROSS <strong>CLUB</strong><small>PICKLEBALL LEAGUE</small></span></div><p>Play for something bigger.</p></div><div class="shell footer-bottom"><span>Unofficial redesign preview for review</span><a href="https://www.crossclubpickleball.com/leagues/dashboard" target="_blank" rel="noopener noreferrer">Current live dashboard ↗</a></div></footer>
 </body>
