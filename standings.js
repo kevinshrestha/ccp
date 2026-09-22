@@ -34,6 +34,19 @@ const players = [
   [19,'Regina Watson','Paddles Up Bellport',12,10,2],
   [20,'Patti Schultz','Picklr Centereach',11,9,2]
 ];
+// Points per game, total point difference, clutch, mixed, gender doubles.
+const playerExtras = [
+  [21,62,'0–0','4–0','2–0'],[21,63,'0–0','3–0','4–0'],
+  [21,82,'0–0','4–0','3–0'],[21,61,'1–0','2–0','4–0'],
+  [21,130,'0–0','6–0','7–0'],[21,112,'1–0','7–0','6–0'],
+  [21,57,'1–0','4–0','2–0'],[21,54,'2–0','3–0','4–0'],
+  [21,50,'0–0','3–0','2–0'],[21,76,'0–0','3–0','3–0'],
+  [21,50,'0–0','3–0','3–0'],[20.83,91,'2–1','6–0','5–1'],
+  [20.71,70,'0–1','3–0','3–1'],[20.71,29,'1–1','3–1','3–0'],
+  [20.67,75,'0–2','6–2','4–0'],[20.67,46,'0–1','2–1','3–0'],
+  [20.71,38,'1–1','3–1','3–0'],[20.71,32,'2–1','2–1','4–0'],
+  [20.67,67,'1–2','6–0','4–2'],[19.91,55,'1–1','6–0','3–2']
+];
 const $ = selector => document.querySelector(selector);
 const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const difference = record => {const [won,lost] = record.split('-').map(Number); return won-lost;};
@@ -53,7 +66,10 @@ function renderTeams() {
 function renderPlayers() {
   const team = $('#team-filter').value;
   const matches = players.filter(player => team === 'all' || player[2] === team);
-  $('#players-list').innerHTML = matches.length ? matches.map(([rank,name,club,games,wins,losses]) => `<details class="player-card"><summary><span class="rank-badge">${rank}</span><span class="player-identity"><strong>${escapeHtml(name)}</strong><small>${escapeHtml(club)}</small></span><span class="metric"><small>Games</small><strong>${games}</strong></span><span class="metric"><small>Record</small><strong>${wins}–${losses}</strong></span><span class="metric"><small>Win rate</small><strong>${Math.floor(wins / games * 10000) / 100}%</strong></span><span class="expand-icon" aria-hidden="true">⌄</span></summary><div class="player-details"><span><small>Representing</small><strong>${escapeHtml(club)}</strong></span><span><small>Games played</small><strong>${games}</strong></span><span><small>Games won</small><strong>${wins}</strong></span><span><small>Games lost</small><strong>${losses}</strong></span></div></details>`).join('') : '<div class="no-players">No players from this team appear in the top 20. See the current league dashboard for the full roster.</div>';
+  $('#players-list').innerHTML = matches.length ? matches.map(([rank,name,club,games,wins,losses]) => {
+    const [ppg,pointDiff,clutch,mixed,gender] = playerExtras[rank-1];
+    return `<details class="player-card"><summary><span class="rank-badge">${rank}</span><span class="player-identity"><strong>${escapeHtml(name)}</strong><small>${escapeHtml(club)}</small></span><span class="metric"><small>Games</small><strong>${games}</strong></span><span class="metric"><small>Record</small><strong>${wins}–${losses}</strong></span><span class="metric"><small>Win rate</small><strong>${Math.floor(wins / games * 10000) / 100}%</strong></span><span class="expand-icon" aria-hidden="true">⌄</span></summary><div class="player-details"><span><small>Points per game</small><strong>${ppg}</strong></span><span><small>Point differential</small><strong>${pointDiff > 0 ? '+' : ''}${pointDiff}</strong></span><span><small>Clutch record</small><strong>${clutch}</strong></span><span><small>Mixed record</small><strong>${mixed}</strong></span><span><small>Gender doubles</small><strong>${gender}</strong></span></div></details>`;
+  }).join('') : '<div class="no-players">No players from this team appear in the top 20. See the current league dashboard for the full roster.</div>';
 }
 function selectView(view) {
   document.querySelectorAll('[data-view]').forEach(button => {
